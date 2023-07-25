@@ -1,0 +1,33 @@
+# Cirkel
+import math
+from matplotlib import pyplot as plt
+from matplotlib import image as mpimg
+
+
+def bereken_cirkel(doorsnede):
+    # Bereken de omtrek en het oppervlakte van de cirkel
+    omtrek = doorsnede * math.pi
+    oppervlakte = (doorsnede ** 2) * math.pi / 4
+
+    print("De omtrek van de cirkel is " + '{:.2f}'.format(omtrek) + " centimeter")
+    print("De oppervlakte van de cirkel is " + '{:.2f}'.format(oppervlakte) + " centimeter")
+
+def teken_cirkel(doorsnede):
+    plt.title("Circle")
+    plt.xlabel("X pixel scaling")
+    plt.ylabel("Y pixels scaling")
+
+    image = mpimg.imread("circle.png")
+    plt.imshow(image)
+    plt.show()
+
+while True:
+    # Invoer van doorsnede cirkel
+    doorsnede = float(input("Hoeveel centimeter is de doorsnede van de cirkel? "))
+
+    bereken_cirkel(doorsnede)
+    teken_cirkel(doorsnede)
+
+    nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+    if nogmaals == "0":
+        break
