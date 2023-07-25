@@ -1,0 +1,27 @@
+# Bol
+import math
+from PIL import Image
+
+def bereken_bol():
+    # Bereken inhoud bol
+    straal = 0.5 * doorsnede
+    inhoud = (4/3) * math.pi * (straal ** 3)
+    oppervlakte = 4 * (straal ** 2) * math.pi
+
+    print("De inhoud van de bol is " + '{:.2f}'.format(inhoud) + " centimeter.")
+    print("De oppervlakte van de bol is " + '{:.2f}'.format(oppervlakte) + " centimeter.")
+
+def teken_bol():
+    img = Image.open("bol.png")
+    img.show()
+
+while True:
+    # Invoer van de doorsnede van de bol
+    doorsnede = float(input("Hoeveel centimeter is de doorsnede van de bol? "))
+
+    bereken_bol()
+    teken_bol()
+
+    nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+    if nogmaals == "0":
+        break
