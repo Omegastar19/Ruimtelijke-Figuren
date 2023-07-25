@@ -1,0 +1,24 @@
+# Piramide
+from PIL import Image
+
+def bereken_piramide():
+    # Bereken de inhoud van de piramide
+    inhoud = (1 / 3) * breedte * breedte * hoogte
+
+    print("De inhoud van de piramide is " + '{:.2f}'.format(inhoud) + " centimeter.")
+
+def teken_piramide():
+    img = Image.open("piramide.png")
+    img.show()
+
+while True:
+    # Invoer van de hoogte en breedte van de piramide
+    breedte = float(input("Hoeveel centimeter is de breedte van de piramide? "))
+    hoogte = float(input("Hoeveel centimeter is de hoogte van de piramide? "))
+
+    bereken_piramide()
+    teken_piramide()
+
+    nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+    if nogmaals == "0":
+        break
