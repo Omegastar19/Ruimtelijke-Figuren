@@ -1,0 +1,22 @@
+# Kubus
+from PIL import Image
+
+def bereken_kubus(lengte):
+    # Bereken de inhoud van de kubus
+    inhoud = lengte ** 3
+    print("De inhoud van de kubus is " + '{:.2f}'.format(inhoud) + " centimeter.")
+
+def teken_kubus():
+    img = Image.open("kubus.png")
+    img.show()
+
+while True:
+    # Invoer van de lengte van de kubus
+    lengte = float(input("Hoeveel centimeter is de lengte van de kubus? "))
+
+    bereken_kubus(lengte)
+    teken_kubus()
+
+    nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+    if nogmaals == "0":
+        break
