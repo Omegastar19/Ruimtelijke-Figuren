@@ -1,0 +1,33 @@
+# Rechthoek
+from PIL import Image
+
+def bereken_rechthoek(lengte, breedte):
+    # Bereken de omtrek en oppervlakte van de rechthoek
+    omtrek = float(lengte) + float(lengte) + float(breedte) + float(breedte)
+    oppervlakte = float(lengte) * float(breedte)
+
+    print("\nDe omtrek van de rechthoek is " + '{:.2f}'.format(omtrek) + " centimeter")
+    print("De oppervlake van de rechthoek is " + '{:.2f}'.format(oppervlakte) + " centimeter")
+
+
+def teken_rechthoek():
+    img = Image.open("rectangle.png")
+    img.show()
+
+while True:
+    lengte = 0
+    breedte = 0
+    while (lengte != 999) or (breedte != 999):
+        try:
+            # Invoer van lengte en breedte van de rechthoek
+            lengte = float(input("\nHoeveel centimeter is de lengte van de rechthoek? "))
+            breedte = float(input("Hoeveel centimeter is de breedte van de rechthoek? "))
+
+            bereken_rechthoek(lengte, breedte)
+            teken_rechthoek()
+
+            nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+            if nogmaals == "0":
+                break
+        except ValueError:
+            print("\nVerkeerde waarde, probeer opnieuw")
