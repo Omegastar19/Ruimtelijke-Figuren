@@ -1,0 +1,23 @@
+# Parallellogram
+from PIL import Image
+
+def bereken_parallellogram(zijde, hoogte):
+    # Bereken het oppervlakte van het parallellogram
+    oppervlakte = zijde * hoogte
+    print("De oppervlakte van het parallellogram is " + '{:.2f}'.format(oppervlakte) + " centimeter.")
+
+def teken_parallellogram():
+    img = Image.open("parallelogram.jpg")
+    img.show()
+
+while True:
+    # Invoer van zijde en hoogte van parallellogram
+    zijde = float(input("Hoeveel centimeter is de zijde van het parallellogram? "))
+    hoogte = float(input("Hoeveel centimeter is de hoogte van de parallellogram? "))
+
+    bereken_parallellogram(zijde, hoogte)
+    teken_parallellogram()
+
+    nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+    if nogmaals == "0":
+        break
