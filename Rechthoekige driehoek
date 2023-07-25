@@ -1,0 +1,26 @@
+# Rechthoekige driehoek
+import math
+from PIL import Image
+
+def bereken_driehoek(azijde, bzijde):
+    # Bereken de schuine zijde van de driehoek
+    czijde = (azijde ** 2) + (bzijde ** 2)
+    czijde = math.sqrt(czijde)
+    print("De lengte van de schuine zijde van de driehoek is " + '{:.2f}'.format(czijde) + " centimeters.")
+
+def teken_driehoek():
+    # Teken de driehoek
+    img = Image.open("right_triangle.png")
+    img.show()
+
+while True:
+    # Invoer van de rechte zijdes van de driehoek
+    azijde = float(input("Hoeveel centimeter is de eerste rechte zijde van de driehoek? "))
+    bzijde = float(input("Hoeveel centimeter is de tweede rechte zijde van de driehoek? "))
+
+    bereken_driehoek(azijde, bzijde)
+    teken_driehoek()
+
+    nogmaals = input("Type [Enter] om door te gaan, of type [0] om te stoppen ")
+    if nogmaals == "0":
+        break
